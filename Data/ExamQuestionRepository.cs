@@ -286,6 +286,21 @@ public static class ExamQuestionRepository
             CorrectLetter = 'B',
             Explanation = "UseExceptionHandler() is the built-in ASP.NET Core middleware that centrally catches unhandled exceptions across the pipeline and routes the user to a friendly error page."
         },
+        new ExamQuestion
+        {
+            Number = 19,
+            Topic = "Error Handling",
+            QuestionText = "A user requests /Student/999, but Student 999 does not exist. What would be the most appropriate response?",
+            Options = new List<ExamOption>
+            {
+                new ExamOption { Letter = 'A', Text = "Display the student's information anyway" },
+                new ExamOption { Letter = 'B', Text = "Display a Not Found (404) response/page" },
+                new ExamOption { Letter = 'C', Text = "Delete Student 999" },
+                new ExamOption { Letter = 'D', Text = "Create Student 999 automatically" }
+            },
+            CorrectLetter = 'B',
+            Explanation = "Requesting a resource that doesn't exist should return an HTTP 404 Not Found — that's the correct, standard response, not fabricating or altering data."
+        },
         // Questions are appended here, one per commit, as each item is answered.
     };
 
