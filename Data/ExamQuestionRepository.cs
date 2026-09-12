@@ -256,6 +256,21 @@ public static class ExamQuestionRepository
             CorrectLetter = 'A',
             Explanation = "A database-level constraint is enforced by the database engine itself, so it still blocks duplicate values even if a bug, bypass, or other client skips application-level checks."
         },
+        new ExamQuestion
+        {
+            Number = 17,
+            Topic = "Error Handling",
+            QuestionText = "What is the purpose of a try...catch block in a controller?",
+            Options = new List<ExamOption>
+            {
+                new ExamOption { Letter = 'A', Text = "To create navigation properties" },
+                new ExamOption { Letter = 'B', Text = "To catch and handle exceptions that may occur during execution" },
+                new ExamOption { Letter = 'C', Text = "To generate database tables" },
+                new ExamOption { Letter = 'D', Text = "To perform client-side validation" }
+            },
+            CorrectLetter = 'B',
+            Explanation = "A try...catch block lets the controller gracefully catch runtime exceptions (e.g. a failed database call) and handle them instead of letting the app crash."
+        },
         // Questions are appended here, one per commit, as each item is answered.
     };
 
