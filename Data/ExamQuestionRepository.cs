@@ -119,6 +119,22 @@ public static class ExamQuestionRepository
             CorrectLetter = 'B',
             Explanation = "One Section can have many Students, but each Student has only one Section — that asymmetry is the definition of a one-to-many relationship (from Section to Student)."
         },
+        new ExamQuestion
+        {
+            Number = 8,
+            Topic = "Relationships",
+            QuestionText = "In the following example, what is SectionId?",
+            CodeSnippet = "public int SectionId { get; set; }\npublic Section Section { get; set; }",
+            Options = new List<ExamOption>
+            {
+                new ExamOption { Letter = 'A', Text = "Primary key of Student" },
+                new ExamOption { Letter = 'B', Text = "Foreign key referencing Section" },
+                new ExamOption { Letter = 'C', Text = "Navigation property" },
+                new ExamOption { Letter = 'D', Text = "Database connection string" }
+            },
+            CorrectLetter = 'B',
+            Explanation = "SectionId is a scalar property that stores the id of the related Section row — that's exactly what a foreign key is, while `Section` itself is the navigation property."
+        },
         // Questions are appended here, one per commit, as each item is answered.
     };
 
