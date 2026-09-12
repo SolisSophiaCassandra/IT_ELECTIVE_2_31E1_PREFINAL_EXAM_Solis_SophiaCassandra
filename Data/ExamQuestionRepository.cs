@@ -271,6 +271,21 @@ public static class ExamQuestionRepository
             CorrectLetter = 'B',
             Explanation = "A try...catch block lets the controller gracefully catch runtime exceptions (e.g. a failed database call) and handle them instead of letting the app crash."
         },
+        new ExamQuestion
+        {
+            Number = 18,
+            Topic = "Error Handling",
+            QuestionText = "Which middleware is commonly used in ASP.NET Core for centralized exception handling?",
+            Options = new List<ExamOption>
+            {
+                new ExamOption { Letter = 'A', Text = "UseDatabase()" },
+                new ExamOption { Letter = 'B', Text = "UseExceptionHandler()" },
+                new ExamOption { Letter = 'C', Text = "UseValidationHandler()" },
+                new ExamOption { Letter = 'D', Text = "UseMvcDatabase()" }
+            },
+            CorrectLetter = 'B',
+            Explanation = "UseExceptionHandler() is the built-in ASP.NET Core middleware that centrally catches unhandled exceptions across the pipeline and routes the user to a friendly error page."
+        },
         // Questions are appended here, one per commit, as each item is answered.
     };
 
