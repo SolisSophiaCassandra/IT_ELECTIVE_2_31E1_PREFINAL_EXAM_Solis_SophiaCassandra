@@ -25,7 +25,7 @@ explanations) is stored in memory in `Data/ExamQuestionRepository.cs`.
 - **Home page** — overview of the exam and student info.
 - **Questions page** (`/Exam`) — every question as a card, filterable by topic, with the correct answer badge shown at a glance.
 - **Details page** (`/Exam/Details/{id}`) — full question view with all four options, the correct option highlighted, and an explanation; includes previous/next navigation (and left/right arrow key support).
-- **Dark, terminal-inspired theme** built with plain CSS (no external UI framework).
+- **Bright pink theme** built with plain CSS (no external UI framework).
 
 ## Running the app
 
