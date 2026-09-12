@@ -226,6 +226,21 @@ public static class ExamQuestionRepository
             CorrectLetter = 'A',
             Explanation = "Client-side checks run in the user's browser and can be disabled, bypassed, or skipped entirely (e.g. direct API calls), so the server must re-validate to protect data integrity."
         },
+        new ExamQuestion
+        {
+            Number = 15,
+            Topic = "Data Integrity",
+            QuestionText = "A school requires every student to have a unique Student Number. Which rule best represents this requirement?",
+            Options = new List<ExamOption>
+            {
+                new ExamOption { Letter = 'A', Text = "Student Number should always be nullable" },
+                new ExamOption { Letter = 'B', Text = "Student Number should be unique" },
+                new ExamOption { Letter = 'C', Text = "Student Number should always be the same" },
+                new ExamOption { Letter = 'D', Text = "Student Number should contain only spaces" }
+            },
+            CorrectLetter = 'B',
+            Explanation = "The requirement literally asks that no two students share a Student Number, which is precisely a uniqueness constraint."
+        },
         // Questions are appended here, one per commit, as each item is answered.
     };
 
