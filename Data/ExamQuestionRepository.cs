@@ -73,6 +73,22 @@ public static class ExamQuestionRepository
             CorrectLetter = 'A',
             Explanation = "DbContext is the session object that manages the connection to the database, tracks entities, and translates LINQ queries into SQL."
         },
+        new ExamQuestion
+        {
+            Number = 5,
+            Topic = "Tooling",
+            QuestionText = "What does the following command primarily do?",
+            CodeSnippet = "dotnet ef dbcontext scaffold \"ConnectionString\" Microsoft.EntityFrameworkCore.SqlServer -o Models",
+            Options = new List<ExamOption>
+            {
+                new ExamOption { Letter = 'A', Text = "Deletes the database" },
+                new ExamOption { Letter = 'B', Text = "Creates a new MVC project" },
+                new ExamOption { Letter = 'C', Text = "Generates EF Core models and a DbContext from an existing database" },
+                new ExamOption { Letter = 'D', Text = "Starts the MVC application" }
+            },
+            CorrectLetter = 'C',
+            Explanation = "The `dotnet ef dbcontext scaffold` command reverse-engineers an existing database into EF Core entity classes and a DbContext, placing the generated files in the Models folder."
+        },
         // Questions are appended here, one per commit, as each item is answered.
     };
 
