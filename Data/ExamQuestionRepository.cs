@@ -241,6 +241,21 @@ public static class ExamQuestionRepository
             CorrectLetter = 'B',
             Explanation = "The requirement literally asks that no two students share a Student Number, which is precisely a uniqueness constraint."
         },
+        new ExamQuestion
+        {
+            Number = 16,
+            Topic = "Data Integrity",
+            QuestionText = "Which is the best reason for having a database-level unique constraint on StudentNumber?",
+            Options = new List<ExamOption>
+            {
+                new ExamOption { Letter = 'A', Text = "It protects data integrity even if application-level validation is bypassed" },
+                new ExamOption { Letter = 'B', Text = "It makes Razor Views render faster" },
+                new ExamOption { Letter = 'C', Text = "It removes the need for a Controller" },
+                new ExamOption { Letter = 'D', Text = "It automatically creates a ViewModel" }
+            },
+            CorrectLetter = 'A',
+            Explanation = "A database-level constraint is enforced by the database engine itself, so it still blocks duplicate values even if a bug, bypass, or other client skips application-level checks."
+        },
         // Questions are appended here, one per commit, as each item is answered.
     };
 
