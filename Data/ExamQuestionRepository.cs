@@ -301,6 +301,22 @@ public static class ExamQuestionRepository
             CorrectLetter = 'B',
             Explanation = "Requesting a resource that doesn't exist should return an HTTP 404 Not Found — that's the correct, standard response, not fabricating or altering data."
         },
+        new ExamQuestion
+        {
+            Number = 20,
+            Topic = "Data Integrity",
+            QuestionText = "A student already belongs to Section A for a particular subject. The application attempts to assign the same student to Section A again. What is the primary concern?",
+            Options = new List<ExamOption>
+            {
+                new ExamOption { Letter = 'A', Text = "Data integrity" },
+                new ExamOption { Letter = 'B', Text = "HTML formatting" },
+                new ExamOption { Letter = 'C', Text = "CSS inheritance" },
+                new ExamOption { Letter = 'D', Text = "Razor syntax" }
+            },
+            CorrectLetter = 'A',
+            Explanation = "Allowing a duplicate assignment risks inconsistent or redundant records — that's a data integrity concern, not a presentation (HTML/CSS) or syntax issue."
+        },
+        // Questions are appended here, one per commit, as each item is answered.
         // Questions are appended here, one per commit, as each item is answered.
     };
 
