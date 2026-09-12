@@ -150,6 +150,21 @@ public static class ExamQuestionRepository
             CorrectLetter = 'B',
             Explanation = "A navigation property lets you move from one entity to its related entity in code (e.g. student.Section), representing the relationship rather than storing raw data itself."
         },
+        new ExamQuestion
+        {
+            Number = 10,
+            Topic = "EF Core Core Concepts",
+            QuestionText = "What does .Include() generally allow EF Core to do?",
+            Options = new List<ExamOption>
+            {
+                new ExamOption { Letter = 'A', Text = "Delete the Section table" },
+                new ExamOption { Letter = 'B', Text = "Load related Section data together with Students" },
+                new ExamOption { Letter = 'C', Text = "Create a new Student" },
+                new ExamOption { Letter = 'D', Text = "Validate Student input" }
+            },
+            CorrectLetter = 'B',
+            Explanation = ".Include() tells EF Core to eagerly load a related entity in the same query, so Section data comes back together with the Students instead of requiring a separate query."
+        },
         // Questions are appended here, one per commit, as each item is answered.
     };
 
