@@ -1,0 +1,41 @@
+@model List<ExamQuestion>
+@{
+    ViewData["Title"] = "Questions";
+    List<string> topics = ViewBag.Topics;
+    string? selected = ViewBag.SelectedTopic;
+}
+
+<section class="page-head">
+    <h1>Questions &amp; Answers</h1>
+    <p>Multiple choice, IT Elective 2 &ndash; Web Systems and Technologies.</p>
+</section>
+
+<div class="topic-filter">
+    <a class="chip @(selected == null ? "chip-active" : "")" asp-action="Index">All</a>
+    @foreach (var t in topics)
+    {
+        <a class="chip @(selected == t ? "chip-active" : "")" asp-action="Index" asp-route-topic="@t">@t</a>
+    }
+</div>
+
+<div class="question-grid">
+    @foreach (var q in Model)
+    {
+        <a class="question-card" asp-action="Details" asp-route-id="@q.Number">
+            <div class="qc-top">
+                <span class="qc-number">Q@(q.Number)</span>
+                <span class="qc-topic">@q.Topic</span>
+            </div>
+            <p class="qc-text">@q.QuestionText</p>
+            <div class="qc-answer">
+                <span class="badge">Answer: @q.CorrectLetter</span>
+                <span class="qc-answer-text">@q.CorrectAnswerText</span>
+            </div>
+        </a>
+    }
+</div>
+
+@if (!Model.Any())
+{
+    <p class="empty-state">No questions yet &mdash; check back after the next commit!</p>
+}

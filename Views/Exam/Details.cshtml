@@ -1,0 +1,59 @@
+@model ExamQuestion
+@{
+    ViewData["Title"] = $"Question {Model.Number}";
+}
+
+<a class="back-link" asp-action="Index">&larr; Back to all questions</a>
+
+<article class="detail-card">
+    <div class="detail-head">
+        <span class="qc-number large">Q@(Model.Number)</span>
+        <span class="qc-topic">@Model.Topic</span>
+    </div>
+
+    <h2 class="detail-question">@Model.QuestionText</h2>
+
+    @if (!string.IsNullOrWhiteSpace(Model.CodeSnippet))
+    {
+        <pre class="code-block"><code>@Model.CodeSnippet</code></pre>
+    }
+
+    <ul class="options-list">
+        @foreach (var opt in Model.Options)
+        {
+            <li class="option-item @(opt.Letter == Model.CorrectLetter ? "option-correct" : "")">
+                <span class="option-letter">@opt.Letter</span>
+                <span class="option-text">@opt.Text</span>
+                @if (opt.Letter == Model.CorrectLetter)
+                {
+                    <span class="option-check">&#10003;</span>
+                }
+            </li>
+        }
+    </ul>
+
+    <div class="explanation">
+        <h3>Why this is the answer</h3>
+        <p>@Model.Explanation</p>
+    </div>
+
+    <div class="detail-nav">
+        @{
+            var all = PrefinalExam.Data.ExamQuestionRepository.GetAll();
+            var prev = all.LastOrDefault(q => q.Number < Model.Number);
+            var next = all.FirstOrDefault(q => q.Number > Model.Number);
+        }
+        @if (prev != null)
+        {
+            <a class="nav-btn" asp-action="Details" asp-route-id="@prev.Number">&larr; Q@(prev.Number)</a>
+        }
+        else
+        {
+            <span></span>
+        }
+        @if (next != null)
+        {
+            <a class="nav-btn" asp-action="Details" asp-route-id="@next.Number">Q@(next.Number) &rarr;</a>
+        }
+    </div>
+</article>

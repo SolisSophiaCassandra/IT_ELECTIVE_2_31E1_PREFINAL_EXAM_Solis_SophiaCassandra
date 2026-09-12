@@ -1,0 +1,33 @@
+@{
+    ViewData["Title"] = "Home";
+    int total = ViewBag.TotalQuestions;
+}
+
+<section class="hero">
+    <h1>IT Elective 2 &ndash; Prefinal Exam Review</h1>
+    <p class="hero-sub">
+        An MVC application built to review my <strong>@total</strong>-item multiple choice
+        exam on ASP.NET Core MVC and Entity Framework Core &mdash; each question paired
+        with my chosen answer and a short explanation. Built without a database:
+        every question lives in memory inside the app.
+    </p>
+    <div class="hero-meta">
+        <div class="meta-card">
+            <span class="meta-label">Student</span>
+            <span class="meta-value">Sophia Cassandra Solis</span>
+        </div>
+        <div class="meta-card">
+            <span class="meta-label">Section</span>
+            <span class="meta-value">31E1</span>
+        </div>
+        <div class="meta-card">
+            <span class="meta-label">Subject</span>
+            <span class="meta-value">IT Elective 2</span>
+        </div>
+        <div class="meta-card">
+            <span class="meta-label">Items</span>
+            <span class="meta-value">@total</span>
+        </div>
+    </div>
+    <a class="cta" asp-controller="Exam" asp-action="Index">Review the Exam &rarr;</a>
+</section>
