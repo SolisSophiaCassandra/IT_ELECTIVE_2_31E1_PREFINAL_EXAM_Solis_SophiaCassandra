@@ -196,6 +196,21 @@ public static class ExamQuestionRepository
             CorrectLetter = 'A',
             Explanation = "Include(s => s.Section) eagerly loads each student's related Section object in the same database round trip, avoiding extra queries or a null navigation property."
         },
+        new ExamQuestion
+        {
+            Number = 13,
+            Topic = "Validation",
+            QuestionText = "Which type of validation occurs in the browser before a request is sent to the server?",
+            Options = new List<ExamOption>
+            {
+                new ExamOption { Letter = 'A', Text = "Database-level validation" },
+                new ExamOption { Letter = 'B', Text = "Client-side validation" },
+                new ExamOption { Letter = 'C', Text = "Server-side validation" },
+                new ExamOption { Letter = 'D', Text = "EF Core migration validation" }
+            },
+            CorrectLetter = 'B',
+            Explanation = "Client-side validation runs in the browser (typically via JavaScript/jQuery unobtrusive validation) before the form is ever submitted to the server."
+        },
         // Questions are appended here, one per commit, as each item is answered.
     };
 
