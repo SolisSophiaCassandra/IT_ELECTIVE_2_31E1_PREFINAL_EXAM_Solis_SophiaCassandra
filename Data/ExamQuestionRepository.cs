@@ -211,6 +211,21 @@ public static class ExamQuestionRepository
             CorrectLetter = 'B',
             Explanation = "Client-side validation runs in the browser (typically via JavaScript/jQuery unobtrusive validation) before the form is ever submitted to the server."
         },
+        new ExamQuestion
+        {
+            Number = 14,
+            Topic = "Validation",
+            QuestionText = "Why is server-side validation still necessary if client-side validation exists?",
+            Options = new List<ExamOption>
+            {
+                new ExamOption { Letter = 'A', Text = "Client-side validation can be bypassed" },
+                new ExamOption { Letter = 'B', Text = "Client-side validation automatically modifies the database" },
+                new ExamOption { Letter = 'C', Text = "Server-side validation only works with SQLite" },
+                new ExamOption { Letter = 'D', Text = "Client-side validation cannot display messages" }
+            },
+            CorrectLetter = 'A',
+            Explanation = "Client-side checks run in the user's browser and can be disabled, bypassed, or skipped entirely (e.g. direct API calls), so the server must re-validate to protect data integrity."
+        },
         // Questions are appended here, one per commit, as each item is answered.
     };
 
