@@ -89,6 +89,21 @@ public static class ExamQuestionRepository
             CorrectLetter = 'C',
             Explanation = "The `dotnet ef dbcontext scaffold` command reverse-engineers an existing database into EF Core entity classes and a DbContext, placing the generated files in the Models folder."
         },
+        new ExamQuestion
+        {
+            Number = 6,
+            Topic = "Configuration",
+            QuestionText = "Where is a database connection string commonly stored in an ASP.NET Core MVC application?",
+            Options = new List<ExamOption>
+            {
+                new ExamOption { Letter = 'A', Text = "Program.cs only" },
+                new ExamOption { Letter = 'B', Text = "appsettings.json" },
+                new ExamOption { Letter = 'C', Text = "Index.cshtml" },
+                new ExamOption { Letter = 'D', Text = "Student.cs" }
+            },
+            CorrectLetter = 'B',
+            Explanation = "Connection strings are configuration data, so they belong in appsettings.json, where they can be read via the configuration system and swapped per environment."
+        },
         // Questions are appended here, one per commit, as each item is answered.
     };
 
