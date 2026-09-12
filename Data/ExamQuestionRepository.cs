@@ -28,6 +28,21 @@ public static class ExamQuestionRepository
             CorrectLetter = 'C',
             Explanation = "An in-memory collection only exists while the app is running and is wiped out on restart. A database stores data on disk so it survives application restarts and shutdowns."
         },
+        new ExamQuestion
+        {
+            Number = 2,
+            Topic = "EF Core Approaches",
+            QuestionText = "Which approach is being used when an existing database is used to generate EF Core entity classes?",
+            Options = new List<ExamOption>
+            {
+                new ExamOption { Letter = 'A', Text = "Code-First" },
+                new ExamOption { Letter = 'B', Text = "Database-First" },
+                new ExamOption { Letter = 'C', Text = "Model-First" },
+                new ExamOption { Letter = 'D', Text = "Controller-First" }
+            },
+            CorrectLetter = 'B',
+            Explanation = "Database-First means the database already exists and EF Core reverse-engineers (scaffolds) entity classes and a DbContext from it, as opposed to Code-First where classes come first."
+        },
         // Questions are appended here, one per commit, as each item is answered.
     };
 
