@@ -104,6 +104,21 @@ public static class ExamQuestionRepository
             CorrectLetter = 'B',
             Explanation = "Connection strings are configuration data, so they belong in appsettings.json, where they can be read via the configuration system and swapped per environment."
         },
+        new ExamQuestion
+        {
+            Number = 7,
+            Topic = "Relationships",
+            QuestionText = "A Student belongs to exactly one Section, while a Section can contain many students. What type of relationship is this?",
+            Options = new List<ExamOption>
+            {
+                new ExamOption { Letter = 'A', Text = "One-to-One" },
+                new ExamOption { Letter = 'B', Text = "One-to-Many" },
+                new ExamOption { Letter = 'C', Text = "Many-to-Many" },
+                new ExamOption { Letter = 'D', Text = "Many-to-One only" }
+            },
+            CorrectLetter = 'B',
+            Explanation = "One Section can have many Students, but each Student has only one Section — that asymmetry is the definition of a one-to-many relationship (from Section to Student)."
+        },
         // Questions are appended here, one per commit, as each item is answered.
     };
 
