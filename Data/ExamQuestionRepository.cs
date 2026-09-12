@@ -180,6 +180,22 @@ public static class ExamQuestionRepository
             CorrectLetter = 'B',
             Explanation = "A ViewModel is a plain object tailored to a specific view — it lets you combine fields from Student and Section into exactly the shape the Razor view needs, without exposing the raw entities."
         },
+        new ExamQuestion
+        {
+            Number = 12,
+            Topic = "EF Core Core Concepts",
+            QuestionText = "Consider this query. What is the main benefit of Include(s => s.Section)?",
+            CodeSnippet = "var students = _context.Students.Include(s => s.Section).ToList();",
+            Options = new List<ExamOption>
+            {
+                new ExamOption { Letter = 'A', Text = "It loads the related Section navigation property" },
+                new ExamOption { Letter = 'B', Text = "It creates a Section object manually" },
+                new ExamOption { Letter = 'C', Text = "It removes the foreign key" },
+                new ExamOption { Letter = 'D', Text = "It prevents the query from accessing the database" }
+            },
+            CorrectLetter = 'A',
+            Explanation = "Include(s => s.Section) eagerly loads each student's related Section object in the same database round trip, avoiding extra queries or a null navigation property."
+        },
         // Questions are appended here, one per commit, as each item is answered.
     };
 
