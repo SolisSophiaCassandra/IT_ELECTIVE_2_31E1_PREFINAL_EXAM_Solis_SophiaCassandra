@@ -43,6 +43,21 @@ public static class ExamQuestionRepository
             CorrectLetter = 'B',
             Explanation = "Database-First means the database already exists and EF Core reverse-engineers (scaffolds) entity classes and a DbContext from it, as opposed to Code-First where classes come first."
         },
+        new ExamQuestion
+        {
+            Number = 3,
+            Topic = "EF Core Core Concepts",
+            QuestionText = "What is the primary purpose of Entity Framework Core?",
+            Options = new List<ExamOption>
+            {
+                new ExamOption { Letter = 'A', Text = "To create HTML pages automatically" },
+                new ExamOption { Letter = 'B', Text = "To replace the MVC Controller" },
+                new ExamOption { Letter = 'C', Text = "To map objects in code to relational database data" },
+                new ExamOption { Letter = 'D', Text = "To replace the C# compiler" }
+            },
+            CorrectLetter = 'C',
+            Explanation = "EF Core is an Object-Relational Mapper (ORM) — its core job is mapping C# classes and objects to rows and tables in a relational database."
+        },
         // Questions are appended here, one per commit, as each item is answered.
     };
 
