@@ -135,6 +135,21 @@ public static class ExamQuestionRepository
             CorrectLetter = 'B',
             Explanation = "SectionId is a scalar property that stores the id of the related Section row — that's exactly what a foreign key is, while `Section` itself is the navigation property."
         },
+        new ExamQuestion
+        {
+            Number = 9,
+            Topic = "Relationships",
+            QuestionText = "What is the purpose of a navigation property such as public Section Section { get; set; }?",
+            Options = new List<ExamOption>
+            {
+                new ExamOption { Letter = 'A', Text = "It stores the database password" },
+                new ExamOption { Letter = 'B', Text = "It represents a relationship to another entity" },
+                new ExamOption { Letter = 'C', Text = "It creates a new database" },
+                new ExamOption { Letter = 'D', Text = "It validates the student's name" }
+            },
+            CorrectLetter = 'B',
+            Explanation = "A navigation property lets you move from one entity to its related entity in code (e.g. student.Section), representing the relationship rather than storing raw data itself."
+        },
         // Questions are appended here, one per commit, as each item is answered.
     };
 
