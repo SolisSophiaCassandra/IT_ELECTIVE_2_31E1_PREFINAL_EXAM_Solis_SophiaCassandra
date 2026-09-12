@@ -58,6 +58,21 @@ public static class ExamQuestionRepository
             CorrectLetter = 'C',
             Explanation = "EF Core is an Object-Relational Mapper (ORM) — its core job is mapping C# classes and objects to rows and tables in a relational database."
         },
+        new ExamQuestion
+        {
+            Number = 4,
+            Topic = "EF Core Core Concepts",
+            QuestionText = "Which EF Core component is primarily responsible for communicating with the database?",
+            Options = new List<ExamOption>
+            {
+                new ExamOption { Letter = 'A', Text = "DbContext" },
+                new ExamOption { Letter = 'B', Text = "DbSetView" },
+                new ExamOption { Letter = 'C', Text = "ControllerContext" },
+                new ExamOption { Letter = 'D', Text = "RazorContext" }
+            },
+            CorrectLetter = 'A',
+            Explanation = "DbContext is the session object that manages the connection to the database, tracks entities, and translates LINQ queries into SQL."
+        },
         // Questions are appended here, one per commit, as each item is answered.
     };
 
