@@ -165,6 +165,21 @@ public static class ExamQuestionRepository
             CorrectLetter = 'B',
             Explanation = ".Include() tells EF Core to eagerly load a related entity in the same query, so Section data comes back together with the Students instead of requiring a separate query."
         },
+        new ExamQuestion
+        {
+            Number = 11,
+            Topic = "MVC Design",
+            QuestionText = "Why might a ViewModel be used when displaying Student and Section information?",
+            Options = new List<ExamOption>
+            {
+                new ExamOption { Letter = 'A', Text = "To replace the database" },
+                new ExamOption { Letter = 'B', Text = "To combine or shape the data specifically needed by the view" },
+                new ExamOption { Letter = 'C', Text = "To automatically create database tables" },
+                new ExamOption { Letter = 'D', Text = "To prevent controllers from using LINQ" }
+            },
+            CorrectLetter = 'B',
+            Explanation = "A ViewModel is a plain object tailored to a specific view — it lets you combine fields from Student and Section into exactly the shape the Razor view needs, without exposing the raw entities."
+        },
         // Questions are appended here, one per commit, as each item is answered.
     };
 
